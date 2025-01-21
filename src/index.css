@@ -6,7 +6,8 @@ html,
 }
 #root {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background-color: rgb(255, 255, 251);
   color: brown;
   padding: 32px;
