@@ -1,6 +1,7 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "../../../testUtil";
 import BookList from "../BookList";
 import { expect } from "vitest";
+import { CartProvider } from "../../../contexts/CartContext";
 
 test("시나리오1. 책 고르기 화면 접속 여부를 확인한다.", () => {
   render(<BookList />);

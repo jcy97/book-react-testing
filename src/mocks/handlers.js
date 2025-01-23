@@ -1,4 +1,4 @@
-import { http } from "msw";
+import { http, HttpResponse } from "msw";
 export const handlers = [
   // 책 목록 가져오기
   http.get("http://localhost:8080/books", ({ params }) => {
