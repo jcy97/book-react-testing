@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useCart } from "../../contexts/CartContext"; // CartContext에서 useCart 훅 가져오기
-import CartItem from "./CartItem"; // CartItem 컴포넌트 가져오기
+import React from "react";
+import { useCart } from "../../contexts/CartContext";
+import CartItem from "./CartItem";
 
 const mockBooks = [
   {
@@ -20,7 +20,12 @@ const mockBooks = [
 ];
 
 function Cart() {
-  const { addToCart, cart, getTotalPrice } = useCart();
+  const { addToCart, cart } = useCart();
+
+  // 총 가격 계산 함수
+  const getTotalPrice = () => {
+    return mockBooks.reduce((total, book) => total + book.price, 0);
+  };
 
   return (
     <div>
@@ -32,7 +37,7 @@ function Cart() {
           {mockBooks.map((book) => (
             <CartItem key={book.id} book={book} />
           ))}
-          <h2>총 가격: {getTotalPrice()} 원</h2>
+          <h2>총 가격: {getTotalPrice()}원</h2>
         </div>
       )}
     </div>

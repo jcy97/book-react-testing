@@ -21,7 +21,7 @@ test("시나리오3. 총 합계가 계산되었는지 확인", () => {
   expect(sumPrice).toBeInTheDocument(); // 합계가 화면에 존재하는지 확인
 
   // "0원"이 아닌지 확인
-  expect(sumPrice).not.toHaveTextContent("0원");
+  expect(sumPrice).not.toHaveTextContent("총 가격: 0원");
 });
 
 // test("시나리오1. 타이틀, 책 목록, 총 합계가 생성되었는지 확인", () => {
